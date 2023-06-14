@@ -16,7 +16,7 @@ button {
   font-size: 20px;
   border-radius: 20px;
   border-width: 1.5px;
-  width: 160px;
+  width: 140px;
   transition-duration: 0.4s;
 }
 

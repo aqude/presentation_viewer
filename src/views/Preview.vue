@@ -24,14 +24,14 @@ export default {
         <img src="/src/assets/more.svg" class="icon_more" alt="more" @click="openPanel = !openPanel">
         <div class="panel" v-show="openPanel">
           <p class="text-span">
-            <router-link to="/information">Бла-бла-бла</router-link>
+            <router-link to="/information" class="router-text">О приложении</router-link>
           </p>
         </div>
       </header>
       <div class="container_components">
         <div v-if="counterComponent === 1">
           <h1>Удобный инструмент для показа вашей презентации!</h1>
-          <button>Презентовать</button>
+          <button @click="counterComponent++">Презентовать</button>
         </div>
         <div v-if="counterComponent === 2">
           <PresentationPicker></PresentationPicker>
@@ -42,18 +42,17 @@ export default {
 </template>
 
 <style scoped>
+.router-text {
+  text-decoration: none;
+  color: black;
+}
 .text-span {
-  margin-right: 30px;
+  margin-right: 25px;
+  margin-top: 0;
+
 }
 .panel {
   position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: end;
   width: 100%;
 }
 
@@ -71,12 +70,12 @@ export default {
 .icon_more {
   margin-right: 20px;
   margin-top: 10px;
+  margin-bottom: 0;
 }
 
 .info {
   text-align: end;
   width: 100%;
-  position: relative; /* Добавляем позиционирование */
 }
 
 button {
